@@ -1,0 +1,69 @@
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* header  */
+
+.encabezado{
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    height: 10%;
+    border: 1px solid #d0d0d0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: 600;
+    
+}
+
+.cuenta{
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    width: 20%;
+}
+
+/* contenedor (barra de proyector, espacio del editor*/
+.contenedor{
+    font-family: sans-serif;
+   display: flex; 
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.proyectos{
+    width: 20%;
+    border: 1px solid #d0d0d0;
+    margin-right: 5px;
+    border-radius: 5px 0px 0px 5px;
+    
+}
+.editor{
+    width: 80%;
+    border: 1px solid #d0d0d0;
+    border-radius: 0px 5px 5px 0px;
+    
+}
+
+.bi.bi-person-circle{
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+    font-size: 40px;
+}
+
+
+.titulo_proyectos{
+    
+    border-bottom: 1px solid #d0d0d0;
+    padding: 8px;
+    font-weight: 550;
+}
+
+.titulo_proyectos i{
+    margin-left:6em;
+}
