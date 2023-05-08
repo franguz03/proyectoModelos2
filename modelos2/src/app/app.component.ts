@@ -10,14 +10,15 @@ export class AppComponent {
 
   crearContenedorEnAside() {
     console.log("helloo");
-
+    
     // Obtener nombre del proyecto
-    const nombreProyecto = prompt("¿Cómo se llama tu proyecto?");
+    let nombreProyecto = prompt("¿Cómo se llama tu proyecto?");
 
     // Obtener referencia al elemento <aside>
     var asideElement = document.querySelector('aside');
 
     if (asideElement !== null && nombreProyecto!=null) {
+      nombreProyecto=(nombreProyecto=="") ? "sin nombre": nombreProyecto;
       // Crear un nuevo contenedor
       var nuevoContenedor = document.createElement('div');
 
