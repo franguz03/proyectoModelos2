@@ -1,4 +1,4 @@
-main{
+main,body,html{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -56,14 +56,43 @@ main{
     font-size: 40px;
 }
 
+.boton-agregar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+.bi.bi-plus-square{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -4px;
+}
+
 
 .titulo_proyectos{
-    
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid #d0d0d0;
     padding: 8px;
     font-weight: 550;
+    align-items: center;
 }
 
-.titulo_proyectos i{
-    margin-left:6em;
+.boton-agregar{
+    height: 80%;
+    justify-content: start;
 }
+
+
+
+.mi-contenedor {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+.mi-contenedor p {
+    color: blue;
+  }
