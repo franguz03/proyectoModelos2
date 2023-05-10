@@ -36,7 +36,8 @@ main,body,html{
 }
 
 .proyectos{
-    width: 20%;
+    width: 100%;
+    
     border: 1px solid #d0d0d0;
     margin-right: 5px;
     border-radius: 5px 0px 0px 5px;
@@ -96,10 +97,3 @@ main,body,html{
 .mi-contenedor p {
     color: blue;
   }
-#lista{
-    width: 20%;
-    border: 1px solid #d0d0d0;
-    margin-right: 5px;
-    border-radius: 5px 0px 0px 5px;
-
-}
