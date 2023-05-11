@@ -8,9 +8,10 @@
 </head>
 <body>
     <aside class="proyectos">
-        <div class="titulo_proyectos">
-            <p>Tus proyectos</p>
-            <button (click)="crearContenedorEnAside()" class="boton-agregar">
+        <div  class="titulo_proyectos">
+            
+            <p ng-init="listarenaside()">tus proyectos     </p>
+            <button (click)="listarenaside()" class="boton-agregar">
                 <i class="bi bi-plus-square"></i>
               </button>
         
