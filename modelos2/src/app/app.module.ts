@@ -10,6 +10,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 //import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
+import { DynamicHostDirective } from './directives/dynamic-host.directive';
+import { DynamicComponent } from './dynamic/dynamic.component';
 
 
 
@@ -17,6 +19,8 @@ import { environment } from '../environments/environment';
   declarations: [
     AppComponent,
     ListaArchivosComponent,
+    DynamicHostDirective,
+    DynamicComponent,
     
   ],
   imports: [

@@ -4,7 +4,6 @@ import { initializeApp } from 'firebase/app';
 import {getAnalytics} from "firebase/analytics";
 import { environment } from 'src/environments/environment';
 import { getDatabase, ref, set,query,orderByKey,onChildAdded,onValue, onChildChanged, DataSnapshot, Database } from "firebase/database";
-import { FirebaseApp } from '@angular/fire/app';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

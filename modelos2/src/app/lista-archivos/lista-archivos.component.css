@@ -58,18 +58,18 @@ main,body,html{
 }
 
 .boton-agregar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
+    border: none;
+    background-color: transparent;
 }
 
 .bi.bi-plus-square{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: -4px;
+
 }
+
+
 
 
 .titulo_proyectos{

@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { ListaArchivosComponent } from './lista-archivos.component';
-import { FirebaseApp, firebaseApp$ } from '@angular/fire/app';
-import { AngularFireDatabase, AngularFireDatabaseModule,AngularFireList } from '@angular/fire/compat/database';
+
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { initializeApp } from 'firebase/app';
 import {getAnalytics} from "firebase/analytics";
 import { environment } from 'src/environments/environment';
