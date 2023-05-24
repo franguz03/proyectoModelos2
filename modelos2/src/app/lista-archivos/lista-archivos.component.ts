@@ -6,6 +6,9 @@ import { Observable,of } from 'rxjs';
 import { DynamicHostDirective } from '../directives/dynamic-host.directive';
 import { DynamicComponent } from '../dynamic/dynamic.component';
 import { ViewContainerRef, ElementRef } from '@angular/core';
+import * as CodeMirror from 'codemirror';
+
+import * as Firepad from 'firepad';
 @Component({
   selector: 'app-lista-archivos',
   templateUrl: './lista-archivos.component.html',
@@ -34,11 +37,15 @@ export class ListaArchivosComponent implements OnInit,OnChanges,AfterViewChecked
       nombre = nombreProyecto !== "" ? nombreProyecto : nombre;
       
       // this.heroservice.crearFirebaseProject(nombreProyecto);
-      this.listadekeys()
       console.log(JSON.stringify(this.hola));
+      if(this.hola.includes(nombre)==false){
+        this.heroservice.crearFirebaseProject(nombre,this.Database);
       const component = this._componentFactoryResolver.resolveComponentFactory(DynamicComponent);
       const dynamicComponentRef = this.dynamicHost._viewContainerRef.createComponent(component);
       dynamicComponentRef.instance.textoContenedor = nombre;
+      dynamicComponentRef.instance.referencia=ref(this.Database,nombre);
+      
+      }
     }
   }
   
@@ -55,6 +62,10 @@ this.hola.push(element);
 const component = this._componentFactoryResolver.resolveComponentFactory(DynamicComponent);
 const dynamicComponentRef = this.dynamicHost._viewContainerRef.createComponent(component);
 dynamicComponentRef.instance.textoContenedor = element;
+dynamicComponentRef.instance.referencia=ref(this.Database,element);
+var b=document.getElementById('virtus')!;
+// var a=CodeMirror(b,{ lineWrapping: true });
+
   
 }
 return x;

@@ -12,6 +12,9 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import { DynamicHostDirective } from './directives/dynamic-host.directive';
 import { DynamicComponent } from './dynamic/dynamic.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 
 
@@ -24,6 +27,9 @@ import { DynamicComponent } from './dynamic/dynamic.component';
     
   ],
   imports: [
+    BrowserModule,
+    FormsModule,
+   
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),

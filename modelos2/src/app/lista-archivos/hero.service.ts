@@ -28,11 +28,9 @@ export class HeroService {
 
     crearFirebaseProject(nombre:string,Td:any) {
       
-    var zd={
-      username:"hola"
-    }
+    
     set(ref(Td, nombre), {
-      username: "cualquiercosaa"
+      username: nombre
     });
   }  
   

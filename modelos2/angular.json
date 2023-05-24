@@ -10,9 +10,11 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+           
             "outputPath": "dist/modelos2",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,10 +27,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/codemirror/lib/codemirror.css"
             ],
-            "scripts": []
+            "scripts": [
+                "node_modules/firepad/dist/firepad.js",
+                "node_modules/codemirror/lib/codemirror.js",
+                "node_modules/codemirror/mode/javascript/javascript.js"
+              
+            ]
+            
           },
+          
           "configurations": {
             "production": {
               "budgets": [
@@ -45,6 +55,7 @@
               ],
               "outputHashing": "all"
             },
+            
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -55,7 +66,9 @@
             }
           },
           "defaultConfiguration": "production"
+          
         },
+        
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
@@ -71,6 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+            
             "browserTarget": "modelos2:build"
           }
         },

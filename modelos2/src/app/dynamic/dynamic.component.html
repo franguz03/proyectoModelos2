@@ -1,8 +1,8 @@
 <body>
-    <div id="contenedor">
+    <div *ngIf="mostrar" id="contenedor">
         {{ textoContenedor }}
 
-        <button id="boton">
+        <button id="boton" (click)="Eliminar()">
             <i class="bi bi-trash"></i>
            
         </button>
