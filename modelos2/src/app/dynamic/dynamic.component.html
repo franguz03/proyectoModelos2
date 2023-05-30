@@ -1,5 +1,5 @@
 <body>
-    <div *ngIf="mostrar" id="contenedor">
+    <div (click)="firepad()" *ngIf="mostrar" id="contenedor">
         {{ textoContenedor }}
 
         <button id="boton" (click)="Eliminar()">

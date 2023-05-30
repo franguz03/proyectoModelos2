@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { HeroService } from './lista-archivos/hero.service';
-import { initializeApp } from 'firebase/app';
-import {getAnalytics} from "firebase/analytics";
 import { environment } from 'src/environments/environment';
-import { getDatabase, ref, set,query,orderByKey,onChildAdded,onValue, onChildChanged, DataSnapshot, Database } from "firebase/database";
+import firebase from "firebase/app";
+import 'firebase/database';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,18 +11,20 @@ import { getDatabase, ref, set,query,orderByKey,onChildAdded,onValue, onChildCha
 })
 export class AppComponent implements OnInit,AfterViewInit{
   title = 'modelos2';
-  App: any;
-  Database: any
-  lista:any
+  App!: firebase.app.App
+  Database!: firebase.database.Database
+  lista!:firebase.database.Query
 
 
   constructor(private heroservice:HeroService){
 
   }
   ngOnInit(): void {
-    this.App=initializeApp(environment.firebase);
-    this.Database=getDatabase(this.App);
-    this.lista=query(ref(this.Database,"/"),orderByKey());
+    this.App=firebase.initializeApp(environment.firebase);
+    this.Database=this.App.database();
+    this.lista=this.Database.ref().orderByKey();
+    console.log(this.lista);
+    //query(ref(this.Database,"/"),orderByKey());
     
   }
     

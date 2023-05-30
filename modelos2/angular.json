@@ -12,9 +12,12 @@
       "architect": {
         
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-           
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.ts",
+              "mergeStrategies": { "externals": "prepend" }
+            },
             "outputPath": "dist/modelos2",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -24,16 +27,16 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/monaco-editor", "output": "assets/monaco-editor" }
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/codemirror/lib/codemirror.css"
+              "node_modules/monaco-editor/min/vs/editor/editor.main.css", 
+              "src/styles.css"
+              
             ],
             "scripts": [
-                "node_modules/firepad/dist/firepad.js",
-                "node_modules/codemirror/lib/codemirror.js",
-                "node_modules/codemirror/mode/javascript/javascript.js"
+                
               
             ]
             
@@ -70,7 +73,7 @@
         },
         
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "modelos2:build:production"
@@ -86,6 +89,7 @@
           "options": {
             
             "browserTarget": "modelos2:build"
+           
           }
         },
         "test": {

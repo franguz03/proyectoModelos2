@@ -1,11 +1,8 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { ListaArchivosComponent } from './lista-archivos.component';
-
-import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { initializeApp } from 'firebase/app';
-import {getAnalytics} from "firebase/analytics";
+import firebase from "firebase/app";
+import 'firebase/database';
 import { environment } from 'src/environments/environment';
-import { getDatabase, ref, set,query,orderByKey,onChildAdded,onValue, onChildChanged, DataSnapshot } from "firebase/database";
 import { Observable, of } from 'rxjs';
 
 
@@ -21,19 +18,20 @@ export class HeroService {
   //query(ref(this.Td,"/"),orderByKey())
   @Output() Disparador:EventEmitter<any>=new EventEmitter();
 
-  constructor(private firebase:AngularFireDatabase){
+  constructor(){
 
   }
  
 
-    crearFirebaseProject(nombre:string,Td:any) {
-      
+    crearFirebaseProject(nombre:string,Td:firebase.database.Database) {
+      var x=Td.ref(nombre);
+      x.push({
+        username:nombre
+      })
     
-    set(ref(Td, nombre), {
-      username: nombre
-    });
+    
   }  
-  
+  /*
   listarkeysdeproyecto():Observable<Array<string>>{
        //Toma un snapshot de la query cuando se modifica un valor de la base de datos
       
@@ -48,7 +46,7 @@ export class HeroService {
     return x;
     
   }
-
+*/
   
 
   

@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { DatabaseReference } from '@angular/fire/compat/database/interfaces';
-import { remove } from 'firebase/database';
+import { EventEmitter, Injectable, Output } from '@angular/core';
+import firebase from "firebase/app";
+import 'firebase/database';
 
 
 
@@ -8,10 +8,11 @@ import { remove } from 'firebase/database';
   providedIn: 'root'
 })
 export class DynamiccomponentserviceService {
-
+  @Output() Disparador:EventEmitter<any>=new EventEmitter();
   constructor() { }
-  public eliminarregistro(Td:DatabaseReference ){
-    remove(Td);
+  public eliminarregistro(Td:firebase.database.Reference ){
+    Td.remove();
+    
     
   }
 }
