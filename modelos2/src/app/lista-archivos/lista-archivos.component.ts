@@ -71,6 +71,7 @@ dynamicComponentRef.instance.hola=this.hola;
 dynamicComponentRef.instance.textoContenedor = element;
 dynamicComponentRef.instance.referencia=this.Database.ref(element);    
 dynamicComponentRef.instance.editor=this.editor;
+dynamicComponentRef.instance.komponentref=dynamicComponentRef;
 
 // var a=CodeMirror(b,{ lineWrapping: true });
 
@@ -101,8 +102,11 @@ return x;
    this.servirvicio.Disparador.subscribe(data=>{
 
     var b=document.getElementById('virtus')!;
+   
     if(this.editor!=undefined){
+      
       this.editor.dispose();
+    
     }
   this.editor= monaco.editor.create(b,{
     language: 'javascript', // Lenguaje del editor (puede ser 'plaintext' para texto sin formato)
@@ -123,9 +127,16 @@ return x;
     // Otras opciones personalizadas que desees configurar
   });
     
-    this.firepad=firepad.fromMonaco(data.referencia,this.editor,{
+    if(data.referencia !="eliminar"){
+      
+      this.firepad=firepad.fromMonaco(data.referencia,this.editor,{
      
-    });
+      });
+    }else{
+      b.innerHTML="";
+    }
+   
+  
    })
    
      

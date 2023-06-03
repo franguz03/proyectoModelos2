@@ -1,8 +1,8 @@
-import { Component, Input, ContentChild, TemplateRef,AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ContentChild, TemplateRef,AfterViewInit, Output, EventEmitter, ViewContainerRef, ComponentRef } from '@angular/core';
 import { DynamiccomponentserviceService } from '../dynamiccomponentservice.service';
 import { CommonModule } from '@angular/common';  
 import { BrowserModule } from '@angular/platform-browser';
-import {useRef,useState} from 'react';
+import { useRef,useState} from 'react';
 import * as firepad from '@hackerrank/firepad';
 import loader from '@monaco-editor/loader';
 import * as monaco from 'monaco-editor';
@@ -23,6 +23,8 @@ export class DynamicComponent implements AfterViewInit {
   mostrar=true;
   editor!:monaco.editor.IStandaloneCodeEditor;
   b:any
+  komponentref:any;
+
   
   constructor(private servicio:DynamiccomponentserviceService){
 
@@ -38,7 +40,12 @@ export class DynamicComponent implements AfterViewInit {
    console.log(this.hola.indexOf(this.referencia.key+""));
    this.hola.splice(this.hola.indexOf(this.referencia.key+""),1);
     this.mostrar=false;
-
+    this.komponentref.destroy();
+    this.servicio.Disparador.emit({
+      referencia:"eliminar"
+    })
+   
+   
   }
   public firepad(){
     
