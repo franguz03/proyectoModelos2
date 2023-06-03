@@ -4,7 +4,8 @@
 
 
 html{
-    height: 100vh;
+    height: 85vh;
+    background-color: #167D7F;
 }
 main,body{
     height: 100%;
@@ -17,14 +18,15 @@ main,body{
 
 .encabezado{
     align-items: center;
-    justify-content: right;
+    justify-content: center;
     display: flex;
-    height: 10%;
+    height: 7%;
     border: 1px solid #d0d0d0;
     margin-bottom: 10px;
     border-radius: 5px;
-    font-family: sans-serif;
-    font-weight: 600;
+    font-family:"Comic Sans MS", cursive;
+    font-size: 1.5rem;
+    background-color: #B5E5CF;
     
 }
 .contenedor{
@@ -37,7 +39,8 @@ main,body{
     width: 20%;
     border: 1px solid #d0d0d0;
     margin-right: 5px;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 10px;
+    background-color: #B5E5CF;
 
 }
 .cuenta{
@@ -50,7 +53,8 @@ main,body{
 .editor{
     width: 80%;
     border: 1px solid #d0d0d0;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 10px;
+    background-color: #B5E5CF;
     
 }
 
@@ -74,7 +78,7 @@ main,body{
 
 #cajones-proyectos{
     min-height: 100px; /* Altura mínima para mostrar el contenedor */
-    max-height: 500px; /* Altura máxima para mostrar la barra de desplazamiento */
+    max-height: 650px; /* Altura máxima para mostrar la barra de desplazamiento */
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical si el contenido excede la altura máxima */
     
 
@@ -90,35 +94,45 @@ main,body{
 }
 
 .bi.bi-plus-square{
-
+    font-size: 2rem;
 }
 
 .titulo_proyectos{
     text-align: right;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #d0d0d0;
-    padding: 8px;
+    border-bottom: 2px solid #167D7F;
     font-weight: 550;
     align-items: center;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 1.5rem;
+    margin: 0px;
+}
+
+#tus-proyectos{
+    margin: 15px;
 }
 
 
-
+/*contenedores dinamicos------------------*/
 #jojo{
     height: 40px;
 }
 #contenedor-dinamico{
-    background-Color : #f2f2f2;
+    background-Color :#F4EBD0 ;
     border: 1px solid #d0d0d0;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    font-family: monospace, sans-serif;
+    font-size: 1.15rem;
     
 }
 
 #contenedor-dinamico:hover{
-    background-color: red;
+    background-color: #3D5B59;
+    color: white;
 }
 
 #boton{
@@ -132,7 +146,8 @@ main,body{
 }
 
 .bi.bi-trash:hover {
-    transform: scale(1.5); /* Aumentar el tamaño en un 20% */
+    transform: scale(2); /* Aumentar el tamaño en un 20% */
+    
   }
 
  
